@@ -56,6 +56,9 @@
 `timescale 1ns/1ps
 
 module cora_z7_10_processing_system7_0_0 (
+GPIO_I, 
+GPIO_O, 
+GPIO_T, 
 I2C0_SDA_I, 
 I2C0_SDA_O, 
 I2C0_SDA_T, 
@@ -143,6 +146,9 @@ PS_SRSTB,
 PS_CLK, 
 PS_PORB 
 );
+input [5 : 0] GPIO_I;
+output [5 : 0] GPIO_O;
+output [5 : 0] GPIO_T;
 input I2C0_SDA_I;
 output I2C0_SDA_O;
 output I2C0_SDA_T;

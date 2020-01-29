@@ -1,10 +1,10 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-// Date        : Thu Apr 26 10:44:44 2018
-// Host        : ubuntu running 64-bit Ubuntu 16.04.3 LTS
-// Command     : write_verilog -force -mode synth_stub
-//               /home/digilent/work/git/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_PWM_0_0/cora_z7_10_PWM_0_0_stub.v
+// Date        : Fri Dec 13 10:29:39 2019
+// Host        : fractal-lnx running 64-bit Debian GNU/Linux 10 (buster)
+// Command     : write_verilog -force -mode synth_stub -rename_top cora_z7_10_pwm_rgb_0 -prefix
+//               cora_z7_10_pwm_rgb_0_ cora_z7_10_PWM_0_0_stub.v
 // Design      : cora_z7_10_PWM_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z010clg400-1
@@ -14,7 +14,7 @@
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* X_CORE_INFO = "PWM_v2_0,Vivado 2017.4" *)
-module cora_z7_10_PWM_0_0(pwm, pwm_axi_awaddr, pwm_axi_awprot, 
+module cora_z7_10_pwm_rgb_0(pwm, pwm_axi_awaddr, pwm_axi_awprot, 
   pwm_axi_awvalid, pwm_axi_awready, pwm_axi_wdata, pwm_axi_wstrb, pwm_axi_wvalid, 
   pwm_axi_wready, pwm_axi_bresp, pwm_axi_bvalid, pwm_axi_bready, pwm_axi_araddr, 
   pwm_axi_arprot, pwm_axi_arvalid, pwm_axi_arready, pwm_axi_rdata, pwm_axi_rresp, 

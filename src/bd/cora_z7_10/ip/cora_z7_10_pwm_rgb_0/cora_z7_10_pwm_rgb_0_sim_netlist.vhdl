@@ -1,10 +1,10 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
--- Date        : Thu Apr 26 10:44:44 2018
--- Host        : ubuntu running 64-bit Ubuntu 16.04.3 LTS
--- Command     : write_vhdl -force -mode funcsim
---               /home/digilent/work/git/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_PWM_0_0/cora_z7_10_PWM_0_0_sim_netlist.vhdl
+-- Date        : Fri Dec 13 10:29:39 2019
+-- Host        : fractal-lnx running 64-bit Debian GNU/Linux 10 (buster)
+-- Command     : write_vhdl -force -mode funcsim -rename_top cora_z7_10_pwm_rgb_0 -prefix
+--               cora_z7_10_pwm_rgb_0_ cora_z7_10_PWM_0_0_sim_netlist.vhdl
 -- Design      : cora_z7_10_PWM_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -14,7 +14,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity cora_z7_10_PWM_0_0_PWM_AXI is
+entity cora_z7_10_pwm_rgb_0_PWM_AXI is
   port (
     pwm_axi_awready : out STD_LOGIC;
     pwm_axi_wready : out STD_LOGIC;
@@ -42,11 +42,9 @@ entity cora_z7_10_PWM_0_0_PWM_AXI is
     pwm_axi_wvalid : in STD_LOGIC;
     pwm_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of cora_z7_10_PWM_0_0_PWM_AXI : entity is "PWM_AXI";
-end cora_z7_10_PWM_0_0_PWM_AXI;
+end cora_z7_10_pwm_rgb_0_PWM_AXI;
 
-architecture STRUCTURE of cora_z7_10_PWM_0_0_PWM_AXI is
+architecture STRUCTURE of cora_z7_10_pwm_rgb_0_PWM_AXI is
   signal \^q\ : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal \axi_araddr_reg_n_0_[5]\ : STD_LOGIC;
   signal \axi_araddr_reg_n_0_[6]\ : STD_LOGIC;
@@ -5381,7 +5379,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity cora_z7_10_PWM_0_0_PWM_v2_0 is
+entity cora_z7_10_pwm_rgb_0_PWM_v2_0 is
   port (
     pwm_axi_arready : out STD_LOGIC;
     pwm_axi_awready : out STD_LOGIC;
@@ -5402,11 +5400,9 @@ entity cora_z7_10_PWM_0_0_PWM_v2_0 is
     pwm_axi_bready : in STD_LOGIC;
     pwm_axi_rready : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of cora_z7_10_PWM_0_0_PWM_v2_0 : entity is "PWM_v2_0";
-end cora_z7_10_PWM_0_0_PWM_v2_0;
+end cora_z7_10_pwm_rgb_0_PWM_v2_0;
 
-architecture STRUCTURE of cora_z7_10_PWM_0_0_PWM_v2_0 is
+architecture STRUCTURE of cora_z7_10_pwm_rgb_0_PWM_v2_0 is
   signal \_inferred__0/i__carry__0_n_0\ : STD_LOGIC;
   signal \_inferred__0/i__carry__0_n_1\ : STD_LOGIC;
   signal \_inferred__0/i__carry__0_n_2\ : STD_LOGIC;
@@ -5928,7 +5924,7 @@ begin
   pwm_axi_bvalid <= \^pwm_axi_bvalid\;
   pwm_axi_rvalid <= \^pwm_axi_rvalid\;
   pwm_axi_wready <= \^pwm_axi_wready\;
-PWM_AXI_inst: entity work.cora_z7_10_PWM_0_0_PWM_AXI
+PWM_AXI_inst: entity work.cora_z7_10_pwm_rgb_0_PWM_AXI
      port map (
       Q(31 downto 0) => \duty_reg[0]_0\(31 downto 0),
       SR(0) => axi_awready_i_1_n_0,
@@ -11837,7 +11833,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity cora_z7_10_PWM_0_0 is
+entity cora_z7_10_pwm_rgb_0 is
   port (
     pwm : out STD_LOGIC_VECTOR ( 5 downto 0 );
     pwm_axi_awaddr : in STD_LOGIC_VECTOR ( 6 downto 0 );
@@ -11863,16 +11859,16 @@ entity cora_z7_10_PWM_0_0 is
     pwm_axi_aresetn : in STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
-  attribute NotValidForBitStream of cora_z7_10_PWM_0_0 : entity is true;
+  attribute NotValidForBitStream of cora_z7_10_pwm_rgb_0 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of cora_z7_10_PWM_0_0 : entity is "cora_z7_10_PWM_0_0,PWM_v2_0,{}";
+  attribute CHECK_LICENSE_TYPE of cora_z7_10_pwm_rgb_0 : entity is "cora_z7_10_PWM_0_0,PWM_v2_0,{}";
   attribute DowngradeIPIdentifiedWarnings : string;
-  attribute DowngradeIPIdentifiedWarnings of cora_z7_10_PWM_0_0 : entity is "yes";
+  attribute DowngradeIPIdentifiedWarnings of cora_z7_10_pwm_rgb_0 : entity is "yes";
   attribute X_CORE_INFO : string;
-  attribute X_CORE_INFO of cora_z7_10_PWM_0_0 : entity is "PWM_v2_0,Vivado 2017.4";
-end cora_z7_10_PWM_0_0;
+  attribute X_CORE_INFO of cora_z7_10_pwm_rgb_0 : entity is "PWM_v2_0,Vivado 2017.4";
+end cora_z7_10_pwm_rgb_0;
 
-architecture STRUCTURE of cora_z7_10_PWM_0_0 is
+architecture STRUCTURE of cora_z7_10_pwm_rgb_0 is
   signal \<const0>\ : STD_LOGIC;
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of pwm_axi_aclk : signal is "xilinx.com:signal:clock:1.0 PWM_AXI_CLK CLK";
@@ -11909,7 +11905,7 @@ GND: unisim.vcomponents.GND
      port map (
       G => \<const0>\
     );
-inst: entity work.cora_z7_10_PWM_0_0_PWM_v2_0
+inst: entity work.cora_z7_10_pwm_rgb_0_PWM_v2_0
      port map (
       pwm(5 downto 0) => pwm(5 downto 0),
       pwm_axi_aclk => pwm_axi_aclk,

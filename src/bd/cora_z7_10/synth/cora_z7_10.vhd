@@ -1,8 +1,8 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
---Date        : Mon Apr 30 11:47:20 2018
---Host        : ubuntu running 64-bit Ubuntu 16.04.3 LTS
+--Date        : Fri Dec 13 15:33:10 2019
+--Host        : fractal-lnx running 64-bit Debian GNU/Linux 10 (buster)
 --Command     : generate_target cora_z7_10.bd
 --Design      : cora_z7_10
 --Purpose     : IP block netlist
@@ -1601,6 +1601,9 @@ entity cora_z7_10 is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
+    GPIO_0_tri_i : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    GPIO_0_tri_o : out STD_LOGIC_VECTOR ( 5 downto 0 );
+    GPIO_0_tri_t : out STD_LOGIC_VECTOR ( 5 downto 0 );
     Shield_I2C_scl_i : in STD_LOGIC;
     Shield_I2C_scl_o : out STD_LOGIC;
     Shield_I2C_scl_t : out STD_LOGIC;
@@ -1660,6 +1663,9 @@ end cora_z7_10;
 architecture STRUCTURE of cora_z7_10 is
   component cora_z7_10_processing_system7_0_0 is
   port (
+    GPIO_I : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    GPIO_O : out STD_LOGIC_VECTOR ( 5 downto 0 );
+    GPIO_T : out STD_LOGIC_VECTOR ( 5 downto 0 );
     I2C0_SDA_I : in STD_LOGIC;
     I2C0_SDA_O : out STD_LOGIC;
     I2C0_SDA_T : out STD_LOGIC;
@@ -1828,32 +1834,6 @@ architecture STRUCTURE of cora_z7_10 is
     dout : out STD_LOGIC_VECTOR ( 2 downto 0 )
   );
   end component cora_z7_10_xlconcat_0_0;
-  component cora_z7_10_PWM_0_0 is
-  port (
-    pwm : out STD_LOGIC_VECTOR ( 5 downto 0 );
-    pwm_axi_awaddr : in STD_LOGIC_VECTOR ( 6 downto 0 );
-    pwm_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    pwm_axi_awvalid : in STD_LOGIC;
-    pwm_axi_awready : out STD_LOGIC;
-    pwm_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    pwm_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    pwm_axi_wvalid : in STD_LOGIC;
-    pwm_axi_wready : out STD_LOGIC;
-    pwm_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    pwm_axi_bvalid : out STD_LOGIC;
-    pwm_axi_bready : in STD_LOGIC;
-    pwm_axi_araddr : in STD_LOGIC_VECTOR ( 6 downto 0 );
-    pwm_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    pwm_axi_arvalid : in STD_LOGIC;
-    pwm_axi_arready : out STD_LOGIC;
-    pwm_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    pwm_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    pwm_axi_rvalid : out STD_LOGIC;
-    pwm_axi_rready : in STD_LOGIC;
-    pwm_axi_aclk : in STD_LOGIC;
-    pwm_axi_aresetn : in STD_LOGIC
-  );
-  end component cora_z7_10_PWM_0_0;
   component cora_z7_10_xlconcat_1_0 is
   port (
     In0 : in STD_LOGIC_VECTOR ( 0 to 0 );
@@ -1914,6 +1894,32 @@ architecture STRUCTURE of cora_z7_10 is
     busy_out : out STD_LOGIC
   );
   end component cora_z7_10_xadc_wiz_0_1;
+  component cora_z7_10_pwm_rgb_0 is
+  port (
+    pwm : out STD_LOGIC_VECTOR ( 5 downto 0 );
+    pwm_axi_awaddr : in STD_LOGIC_VECTOR ( 6 downto 0 );
+    pwm_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    pwm_axi_awvalid : in STD_LOGIC;
+    pwm_axi_awready : out STD_LOGIC;
+    pwm_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    pwm_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    pwm_axi_wvalid : in STD_LOGIC;
+    pwm_axi_wready : out STD_LOGIC;
+    pwm_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    pwm_axi_bvalid : out STD_LOGIC;
+    pwm_axi_bready : in STD_LOGIC;
+    pwm_axi_araddr : in STD_LOGIC_VECTOR ( 6 downto 0 );
+    pwm_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    pwm_axi_arvalid : in STD_LOGIC;
+    pwm_axi_arready : out STD_LOGIC;
+    pwm_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    pwm_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    pwm_axi_rvalid : out STD_LOGIC;
+    pwm_axi_rready : in STD_LOGIC;
+    pwm_axi_aclk : in STD_LOGIC;
+    pwm_axi_aresetn : in STD_LOGIC
+  );
+  end component cora_z7_10_pwm_rgb_0;
   signal PWM_0_pwm : STD_LOGIC_VECTOR ( 5 downto 0 );
   signal Vaux0_0_1_V_N : STD_LOGIC;
   signal Vaux0_0_1_V_P : STD_LOGIC;
@@ -1970,6 +1976,9 @@ architecture STRUCTURE of cora_z7_10 is
   signal processing_system7_0_FIXED_IO_PS_CLK : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_PS_PORB : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_PS_SRSTB : STD_LOGIC;
+  signal processing_system7_0_GPIO_0_TRI_I : STD_LOGIC_VECTOR ( 5 downto 0 );
+  signal processing_system7_0_GPIO_0_TRI_O : STD_LOGIC_VECTOR ( 5 downto 0 );
+  signal processing_system7_0_GPIO_0_TRI_T : STD_LOGIC_VECTOR ( 5 downto 0 );
   signal processing_system7_0_IIC_0_SCL_I : STD_LOGIC;
   signal processing_system7_0_IIC_0_SCL_O : STD_LOGIC;
   signal processing_system7_0_IIC_0_SCL_T : STD_LOGIC;
@@ -2134,44 +2143,44 @@ architecture STRUCTURE of cora_z7_10 is
   attribute X_INTERFACE_INFO of FIXED_IO_ps_clk : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK";
   attribute X_INTERFACE_INFO of FIXED_IO_ps_porb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB";
   attribute X_INTERFACE_INFO of FIXED_IO_ps_srstb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB";
-  attribute X_INTERFACE_INFO of Shield_I2C_scl_i : signal is "xilinx.com:interface:iic:1.0 Shield_I2C ";
-  attribute X_INTERFACE_INFO of Shield_I2C_scl_o : signal is "xilinx.com:interface:iic:1.0 Shield_I2C ";
-  attribute X_INTERFACE_INFO of Shield_I2C_scl_t : signal is "xilinx.com:interface:iic:1.0 Shield_I2C ";
-  attribute X_INTERFACE_INFO of Shield_I2C_sda_i : signal is "xilinx.com:interface:iic:1.0 Shield_I2C ";
-  attribute X_INTERFACE_INFO of Shield_I2C_sda_o : signal is "xilinx.com:interface:iic:1.0 Shield_I2C ";
-  attribute X_INTERFACE_INFO of Shield_I2C_sda_t : signal is "xilinx.com:interface:iic:1.0 Shield_I2C ";
-  attribute X_INTERFACE_INFO of Shield_SPI_io0_i : signal is "xilinx.com:interface:spi:1.0 Shield_SPI ";
-  attribute X_INTERFACE_INFO of Shield_SPI_io0_o : signal is "xilinx.com:interface:spi:1.0 Shield_SPI ";
-  attribute X_INTERFACE_INFO of Shield_SPI_io0_t : signal is "xilinx.com:interface:spi:1.0 Shield_SPI ";
-  attribute X_INTERFACE_INFO of Shield_SPI_io1_i : signal is "xilinx.com:interface:spi:1.0 Shield_SPI ";
-  attribute X_INTERFACE_INFO of Shield_SPI_io1_o : signal is "xilinx.com:interface:spi:1.0 Shield_SPI ";
-  attribute X_INTERFACE_INFO of Shield_SPI_io1_t : signal is "xilinx.com:interface:spi:1.0 Shield_SPI ";
-  attribute X_INTERFACE_INFO of Shield_SPI_sck_i : signal is "xilinx.com:interface:spi:1.0 Shield_SPI ";
-  attribute X_INTERFACE_INFO of Shield_SPI_sck_o : signal is "xilinx.com:interface:spi:1.0 Shield_SPI ";
-  attribute X_INTERFACE_INFO of Shield_SPI_sck_t : signal is "xilinx.com:interface:spi:1.0 Shield_SPI ";
-  attribute X_INTERFACE_INFO of Shield_SPI_ss_i : signal is "xilinx.com:interface:spi:1.0 Shield_SPI ";
-  attribute X_INTERFACE_INFO of Shield_SPI_ss_o : signal is "xilinx.com:interface:spi:1.0 Shield_SPI ";
-  attribute X_INTERFACE_INFO of Shield_SPI_ss_t : signal is "xilinx.com:interface:spi:1.0 Shield_SPI ";
-  attribute X_INTERFACE_INFO of vaux0_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux0 ";
-  attribute X_INTERFACE_INFO of vaux0_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux0 ";
-  attribute X_INTERFACE_INFO of vaux12_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux12 ";
-  attribute X_INTERFACE_INFO of vaux12_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux12 ";
-  attribute X_INTERFACE_INFO of vaux13_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux13 ";
-  attribute X_INTERFACE_INFO of vaux13_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux13 ";
-  attribute X_INTERFACE_INFO of vaux15_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux15 ";
-  attribute X_INTERFACE_INFO of vaux15_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux15 ";
-  attribute X_INTERFACE_INFO of vaux1_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux1 ";
-  attribute X_INTERFACE_INFO of vaux1_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux1 ";
-  attribute X_INTERFACE_INFO of vaux5_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux5 ";
-  attribute X_INTERFACE_INFO of vaux5_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux5 ";
-  attribute X_INTERFACE_INFO of vaux6_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux6 ";
-  attribute X_INTERFACE_INFO of vaux6_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux6 ";
-  attribute X_INTERFACE_INFO of vaux8_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux8 ";
-  attribute X_INTERFACE_INFO of vaux8_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux8 ";
-  attribute X_INTERFACE_INFO of vaux9_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux9 ";
-  attribute X_INTERFACE_INFO of vaux9_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux9 ";
-  attribute X_INTERFACE_INFO of vp_vn_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 vp_vn ";
-  attribute X_INTERFACE_INFO of vp_vn_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 vp_vn ";
+  attribute X_INTERFACE_INFO of Shield_I2C_scl_i : signal is "xilinx.com:interface:iic:1.0 Shield_I2C SCL_I";
+  attribute X_INTERFACE_INFO of Shield_I2C_scl_o : signal is "xilinx.com:interface:iic:1.0 Shield_I2C SCL_O";
+  attribute X_INTERFACE_INFO of Shield_I2C_scl_t : signal is "xilinx.com:interface:iic:1.0 Shield_I2C SCL_T";
+  attribute X_INTERFACE_INFO of Shield_I2C_sda_i : signal is "xilinx.com:interface:iic:1.0 Shield_I2C SDA_I";
+  attribute X_INTERFACE_INFO of Shield_I2C_sda_o : signal is "xilinx.com:interface:iic:1.0 Shield_I2C SDA_O";
+  attribute X_INTERFACE_INFO of Shield_I2C_sda_t : signal is "xilinx.com:interface:iic:1.0 Shield_I2C SDA_T";
+  attribute X_INTERFACE_INFO of Shield_SPI_io0_i : signal is "xilinx.com:interface:spi:1.0 Shield_SPI IO0_I";
+  attribute X_INTERFACE_INFO of Shield_SPI_io0_o : signal is "xilinx.com:interface:spi:1.0 Shield_SPI IO0_O";
+  attribute X_INTERFACE_INFO of Shield_SPI_io0_t : signal is "xilinx.com:interface:spi:1.0 Shield_SPI IO0_T";
+  attribute X_INTERFACE_INFO of Shield_SPI_io1_i : signal is "xilinx.com:interface:spi:1.0 Shield_SPI IO1_I";
+  attribute X_INTERFACE_INFO of Shield_SPI_io1_o : signal is "xilinx.com:interface:spi:1.0 Shield_SPI IO1_O";
+  attribute X_INTERFACE_INFO of Shield_SPI_io1_t : signal is "xilinx.com:interface:spi:1.0 Shield_SPI IO1_T";
+  attribute X_INTERFACE_INFO of Shield_SPI_sck_i : signal is "xilinx.com:interface:spi:1.0 Shield_SPI SCK_I";
+  attribute X_INTERFACE_INFO of Shield_SPI_sck_o : signal is "xilinx.com:interface:spi:1.0 Shield_SPI SCK_O";
+  attribute X_INTERFACE_INFO of Shield_SPI_sck_t : signal is "xilinx.com:interface:spi:1.0 Shield_SPI SCK_T";
+  attribute X_INTERFACE_INFO of Shield_SPI_ss_i : signal is "xilinx.com:interface:spi:1.0 Shield_SPI SS_I";
+  attribute X_INTERFACE_INFO of Shield_SPI_ss_o : signal is "xilinx.com:interface:spi:1.0 Shield_SPI SS_O";
+  attribute X_INTERFACE_INFO of Shield_SPI_ss_t : signal is "xilinx.com:interface:spi:1.0 Shield_SPI SS_T";
+  attribute X_INTERFACE_INFO of vaux0_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux0 V_N";
+  attribute X_INTERFACE_INFO of vaux0_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux0 V_P";
+  attribute X_INTERFACE_INFO of vaux12_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux12 V_N";
+  attribute X_INTERFACE_INFO of vaux12_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux12 V_P";
+  attribute X_INTERFACE_INFO of vaux13_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux13 V_N";
+  attribute X_INTERFACE_INFO of vaux13_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux13 V_P";
+  attribute X_INTERFACE_INFO of vaux15_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux15 V_N";
+  attribute X_INTERFACE_INFO of vaux15_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux15 V_P";
+  attribute X_INTERFACE_INFO of vaux1_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux1 V_N";
+  attribute X_INTERFACE_INFO of vaux1_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux1 V_P";
+  attribute X_INTERFACE_INFO of vaux5_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux5 V_N";
+  attribute X_INTERFACE_INFO of vaux5_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux5 V_P";
+  attribute X_INTERFACE_INFO of vaux6_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux6 V_N";
+  attribute X_INTERFACE_INFO of vaux6_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux6 V_P";
+  attribute X_INTERFACE_INFO of vaux8_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux8 V_N";
+  attribute X_INTERFACE_INFO of vaux8_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux8 V_P";
+  attribute X_INTERFACE_INFO of vaux9_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux9 V_N";
+  attribute X_INTERFACE_INFO of vaux9_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 vaux9 V_P";
+  attribute X_INTERFACE_INFO of vp_vn_v_n : signal is "xilinx.com:interface:diff_analog_io:1.0 vp_vn V_N";
+  attribute X_INTERFACE_INFO of vp_vn_v_p : signal is "xilinx.com:interface:diff_analog_io:1.0 vp_vn V_P";
   attribute X_INTERFACE_INFO of DDR_addr : signal is "xilinx.com:interface:ddrx:1.0 DDR ADDR";
   attribute X_INTERFACE_PARAMETER of DDR_addr : signal is "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250";
   attribute X_INTERFACE_INFO of DDR_ba : signal is "xilinx.com:interface:ddrx:1.0 DDR BA";
@@ -2180,6 +2189,9 @@ architecture STRUCTURE of cora_z7_10 is
   attribute X_INTERFACE_INFO of DDR_dqs_n : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_N";
   attribute X_INTERFACE_INFO of DDR_dqs_p : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_P";
   attribute X_INTERFACE_INFO of FIXED_IO_mio : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO MIO";
+  attribute X_INTERFACE_INFO of GPIO_0_tri_i : signal is "xilinx.com:interface:gpio:1.0 GPIO_0 ";
+  attribute X_INTERFACE_INFO of GPIO_0_tri_o : signal is "xilinx.com:interface:gpio:1.0 GPIO_0 ";
+  attribute X_INTERFACE_INFO of GPIO_0_tri_t : signal is "xilinx.com:interface:gpio:1.0 GPIO_0 ";
   attribute X_INTERFACE_INFO of btns_2bits_tri_i : signal is "xilinx.com:interface:gpio:1.0 btns_2bits TRI_I";
   attribute X_INTERFACE_INFO of shield_dp0_dp13_tri_i : signal is "xilinx.com:interface:gpio:1.0 shield_dp0_dp13 TRI_I";
   attribute X_INTERFACE_INFO of shield_dp0_dp13_tri_o : signal is "xilinx.com:interface:gpio:1.0 shield_dp0_dp13 TRI_O";
@@ -2191,6 +2203,8 @@ architecture STRUCTURE of cora_z7_10 is
   attribute X_INTERFACE_INFO of user_dio_tri_o : signal is "xilinx.com:interface:gpio:1.0 user_dio TRI_O";
   attribute X_INTERFACE_INFO of user_dio_tri_t : signal is "xilinx.com:interface:gpio:1.0 user_dio TRI_T";
 begin
+  GPIO_0_tri_o(5 downto 0) <= processing_system7_0_GPIO_0_TRI_O(5 downto 0);
+  GPIO_0_tri_t(5 downto 0) <= processing_system7_0_GPIO_0_TRI_T(5 downto 0);
   Shield_I2C_scl_o <= processing_system7_0_IIC_0_SCL_O;
   Shield_I2C_scl_t <= processing_system7_0_IIC_0_SCL_T;
   Shield_I2C_sda_o <= processing_system7_0_IIC_0_SDA_O;
@@ -2227,6 +2241,7 @@ begin
   axi_gpio_0_GPIO_TRI_I(1 downto 0) <= btns_2bits_tri_i(1 downto 0);
   axi_gpio_1_GPIO2_TRI_I(15 downto 0) <= shield_dp26_dp41_tri_i(15 downto 0);
   axi_gpio_1_GPIO_TRI_I(13 downto 0) <= shield_dp0_dp13_tri_i(13 downto 0);
+  processing_system7_0_GPIO_0_TRI_I(5 downto 0) <= GPIO_0_tri_i(5 downto 0);
   processing_system7_0_IIC_0_SCL_I <= Shield_I2C_scl_i;
   processing_system7_0_IIC_0_SDA_I <= Shield_I2C_sda_i;
   processing_system7_0_SPI_0_IO0_I <= Shield_SPI_io0_i;
@@ -2323,6 +2338,9 @@ processing_system7_0: component cora_z7_10_processing_system7_0_0
       DDR_WEB => DDR_we_n,
       FCLK_CLK0 => processing_system7_0_FCLK_CLK0,
       FCLK_RESET0_N => processing_system7_0_FCLK_RESET0_N,
+      GPIO_I(5 downto 0) => processing_system7_0_GPIO_0_TRI_I(5 downto 0),
+      GPIO_O(5 downto 0) => processing_system7_0_GPIO_0_TRI_O(5 downto 0),
+      GPIO_T(5 downto 0) => processing_system7_0_GPIO_0_TRI_T(5 downto 0),
       I2C0_SCL_I => processing_system7_0_IIC_0_SCL_I,
       I2C0_SCL_O => processing_system7_0_IIC_0_SCL_O,
       I2C0_SCL_T => processing_system7_0_IIC_0_SCL_T,
@@ -2514,7 +2532,7 @@ ps7_0_axi_periph: entity work.cora_z7_10_ps7_0_axi_periph_0
       S00_AXI_wstrb(3 downto 0) => processing_system7_0_M_AXI_GP0_WSTRB(3 downto 0),
       S00_AXI_wvalid => processing_system7_0_M_AXI_GP0_WVALID
     );
-pwm_rgb: component cora_z7_10_PWM_0_0
+pwm_rgb: component cora_z7_10_pwm_rgb_0
      port map (
       pwm(5 downto 0) => PWM_0_pwm(5 downto 0),
       pwm_axi_aclk => processing_system7_0_FCLK_CLK0,

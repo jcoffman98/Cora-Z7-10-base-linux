@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2018 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2019 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -48,12 +48,12 @@
 
 
 // IP VLNV: digilentinc.com:IP:PWM:2.0
-// IP Revision: 6
+// IP Revision: 10
 
-(* X_CORE_INFO = "PWM_v2_0,Vivado 2017.4" *)
-(* CHECK_LICENSE_TYPE = "cora_z7_10_PWM_0_0,PWM_v2_0,{}" *)
+`timescale 1ns/1ps
+
 (* DowngradeIPIdentifiedWarnings = "yes" *)
-module cora_z7_10_PWM_0_0 (
+module cora_z7_10_pwm_rgb_0 (
   pwm,
   pwm_axi_awaddr,
   pwm_axi_awprot,

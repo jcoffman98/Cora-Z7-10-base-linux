@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0x40EF55376F00902A" bd:device="xc7z010clg400-1" bd:isValidated="true" bd:synthFlowMode="Hierarchical" bd:tool_version="2017.4" bd:top="cora_z7_10" bd:version="1.00.a">
+<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0xB88FB6662F976537" bd:device="xc7z010clg400-1" bd:isValidated="true" bd:synthFlowMode="Hierarchical" bd:tool_version="2017.4" bd:top="cora_z7_10" bd:version="1.00.a">
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
@@ -242,6 +242,12 @@
         <spirit:busType spirit:library="interface" spirit:name="diff_analog_io" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:abstractionType spirit:library="interface" spirit:name="diff_analog_io_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
       </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>GPIO_0</spirit:name>
+        <spirit:master/>
+        <spirit:busType spirit:library="interface" spirit:name="gpio" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="gpio_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
     </spirit:busInterfaces>
     <spirit:model>
       <spirit:views>
@@ -414,7 +420,7 @@
           <spirit:configurableElementValue spirit:referenceId="PCW_EN_EMIO_ENET1">0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_EN_PTP_ENET0">0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_EN_PTP_ENET1">0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="PCW_EN_EMIO_GPIO">0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="PCW_EN_EMIO_GPIO">1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_EN_EMIO_I2C0">1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_EN_EMIO_I2C1">0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_EN_EMIO_PJTAG">0</spirit:configurableElementValue>
@@ -462,6 +468,7 @@
           <spirit:configurableElementValue spirit:referenceId="PCW_USE_PS_SLCR_REGISTERS">0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_USE_CORESIGHT">0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_EN_EMIO_SRAM_INT">0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="PCW_GPIO_EMIO_GPIO_WIDTH">6</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_GP0_NUM_WRITE_THREADS">4</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_GP0_NUM_READ_THREADS">4</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_GP1_NUM_WRITE_THREADS">4</spirit:configurableElementValue>
@@ -473,6 +480,10 @@
           <spirit:configurableElementValue spirit:referenceId="PCW_M_AXI_GP0_SUPPORT_NARROW_BURST">0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_M_AXI_GP0_THREAD_ID_WIDTH">12</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_INCLUDE_ACP_TRANS_CHECK">0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="PCW_S_AXI_HP0_DATA_WIDTH">64</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="PCW_S_AXI_HP1_DATA_WIDTH">64</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="PCW_S_AXI_HP2_DATA_WIDTH">64</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="PCW_S_AXI_HP3_DATA_WIDTH">64</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_EN_DDR">1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_EN_SMC">0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_EN_QSPI">0</spirit:configurableElementValue>
@@ -531,7 +542,7 @@
           <spirit:configurableElementValue spirit:referenceId="PCW_GP0_EN_MODIFIABLE_TXN">0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_GP1_EN_MODIFIABLE_TXN">0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_IMPORT_BOARD_PRESET">None</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="PCW_PERIPHERAL_BOARD_PRESET">None</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="PCW_PERIPHERAL_BOARD_PRESET">part0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_PRESET_BANK0_VOLTAGE">LVCMOS 3.3V</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_PRESET_BANK1_VOLTAGE">LVCMOS 1.8V</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_UIPARAM_DDR_ENABLE">1</spirit:configurableElementValue>
@@ -599,7 +610,8 @@
           <spirit:configurableElementValue spirit:referenceId="PCW_GPIO_PERIPHERAL_ENABLE">0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_GPIO_MIO_GPIO_ENABLE">1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_GPIO_MIO_GPIO_IO">MIO</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="PCW_GPIO_EMIO_GPIO_ENABLE">0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="PCW_GPIO_EMIO_GPIO_ENABLE">1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="PCW_GPIO_EMIO_GPIO_IO">6</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_APU_CLK_RATIO_ENABLE">6:2:1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_ENET0_PERIPHERAL_FREQMHZ">1000 Mbps</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="PCW_CPU_PERIPHERAL_CLKSRC">ARM PLL</spirit:configurableElementValue>
@@ -884,14 +896,6 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>pwm_rgb</spirit:instanceName>
-        <spirit:componentRef spirit:library="IP" spirit:name="PWM" spirit:vendor="digilentinc.com" spirit:version="2.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">cora_z7_10_PWM_0_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="NUM_PWM">6</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
         <spirit:instanceName>SPI_EMIO_dummy</spirit:instanceName>
         <spirit:componentRef spirit:library="ip" spirit:name="xlconcat" spirit:vendor="xilinx.com" spirit:version="2.1"/>
         <spirit:configurableElementValues>
@@ -932,6 +936,14 @@
           <spirit:configurableElementValue spirit:referenceId="CHANNEL_ENABLE_VAUXP15_VAUXN15">true</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>pwm_rgb</spirit:instanceName>
+        <spirit:componentRef spirit:library="IP" spirit:name="PWM" spirit:vendor="digilentinc.com" spirit:version="2.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">cora_z7_10_pwm_rgb_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="NUM_PWM">6</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
     </spirit:componentInstances>
     <spirit:interconnections>
       <spirit:interconnection>
@@ -965,16 +977,16 @@
         <spirit:name>processing_system7_0_FCLK_CLK0</spirit:name>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="FCLK_CLK0"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="M_AXI_GP0_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="S00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="rst_ps7_0_100M" spirit:portRef="slowest_sync_clk"/>
         <spirit:internalPortReference spirit:componentRef="axi_gpio_btn" spirit:portRef="s_axi_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="axi_gpio_shield" spirit:portRef="s_axi_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="xadc_wiz_0" spirit:portRef="s_axi_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="pwm_rgb" spirit:portRef="pwm_axi_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="S00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="axi_gpio_shield" spirit:portRef="s_axi_aclk"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M01_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="pwm_rgb" spirit:portRef="pwm_axi_aclk"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M02_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="xadc_wiz_0" spirit:portRef="s_axi_aclk"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M03_ACLK"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
@@ -985,14 +997,14 @@
       <spirit:adHocConnection>
         <spirit:name>rst_ps7_0_100M_peripheral_aresetn</spirit:name>
         <spirit:internalPortReference spirit:componentRef="rst_ps7_0_100M" spirit:portRef="peripheral_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="S00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_gpio_btn" spirit:portRef="s_axi_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_gpio_shield" spirit:portRef="s_axi_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M01_ARESETN"/>
-        <spirit:internalPortReference spirit:componentRef="pwm_rgb" spirit:portRef="pwm_axi_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M02_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="xadc_wiz_0" spirit:portRef="s_axi_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="pwm_rgb" spirit:portRef="pwm_axi_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="S00_ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M00_ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M01_ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M02_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M03_ARESETN"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
@@ -1090,6 +1102,9 @@
       </spirit:hierConnection>
       <spirit:hierConnection spirit:interfaceRef="vaux15/Vaux15_0_1">
         <spirit:activeInterface spirit:busRef="Vaux15" spirit:componentRef="xadc_wiz_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="GPIO_0/processing_system7_0_GPIO_0">
+        <spirit:activeInterface spirit:busRef="GPIO_0" spirit:componentRef="processing_system7_0"/>
       </spirit:hierConnection>
     </spirit:hierConnections>
   </spirit:design>

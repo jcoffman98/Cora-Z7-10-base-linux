@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="33">
   <CompositeFile CompositeFileTopName="cora_z7_10" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1525114054"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1525114054"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1525114054"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1525114054"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1576280001"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1576280001"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1576280001"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1576280001"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip/cora_z7_10_processing_system7_0_0/cora_z7_10_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
@@ -55,14 +55,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/cora_z7_10_PWM_0_0/cora_z7_10_PWM_0_0.xci" Type="IP">
-        <Instance HierarchyPath="pwm_rgb"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip/cora_z7_10_xbar_0/cora_z7_10_xbar_0.xci" Type="IP">
         <Instance HierarchyPath="ps7_0_axi_periph/xbar"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -91,6 +83,14 @@
       </File>
       <File Name="ip/cora_z7_10_xadc_wiz_0_1/cora_z7_10_xadc_wiz_0_1.xci" Type="IP">
         <Instance HierarchyPath="xadc_wiz_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/cora_z7_10_pwm_rgb_0/cora_z7_10_pwm_rgb_0.xci" Type="IP">
+        <Instance HierarchyPath="pwm_rgb"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>

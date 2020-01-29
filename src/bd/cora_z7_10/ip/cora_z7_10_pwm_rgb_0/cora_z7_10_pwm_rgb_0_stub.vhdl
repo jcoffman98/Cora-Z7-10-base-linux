@@ -1,10 +1,10 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
--- Date        : Thu Apr 26 10:44:44 2018
--- Host        : ubuntu running 64-bit Ubuntu 16.04.3 LTS
--- Command     : write_vhdl -force -mode synth_stub
---               /home/digilent/work/git/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_PWM_0_0/cora_z7_10_PWM_0_0_stub.vhdl
+-- Date        : Fri Dec 13 10:29:39 2019
+-- Host        : fractal-lnx running 64-bit Debian GNU/Linux 10 (buster)
+-- Command     : write_vhdl -force -mode synth_stub -rename_top cora_z7_10_pwm_rgb_0 -prefix
+--               cora_z7_10_pwm_rgb_0_ cora_z7_10_PWM_0_0_stub.vhdl
 -- Design      : cora_z7_10_PWM_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z010clg400-1
@@ -12,7 +12,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity cora_z7_10_PWM_0_0 is
+entity cora_z7_10_pwm_rgb_0 is
   Port ( 
     pwm : out STD_LOGIC_VECTOR ( 5 downto 0 );
     pwm_axi_awaddr : in STD_LOGIC_VECTOR ( 6 downto 0 );
@@ -38,9 +38,9 @@ entity cora_z7_10_PWM_0_0 is
     pwm_axi_aresetn : in STD_LOGIC
   );
 
-end cora_z7_10_PWM_0_0;
+end cora_z7_10_pwm_rgb_0;
 
-architecture stub of cora_z7_10_PWM_0_0 is
+architecture stub of cora_z7_10_pwm_rgb_0 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;

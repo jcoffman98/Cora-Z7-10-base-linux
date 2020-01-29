@@ -156,6 +156,7 @@ proc create_root_design { parentCell } {
   # Create interface ports
   set DDR [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:ddrx_rtl:1.0 DDR ]
   set FIXED_IO [ create_bd_intf_port -mode Master -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 FIXED_IO ]
+  set GPIO_0 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 GPIO_0 ]
   set Shield_I2C [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:iic_rtl:1.0 Shield_I2C ]
   set Shield_SPI [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:spi_rtl:1.0 Shield_SPI ]
   set btns_2bits [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 btns_2bits ]
@@ -340,7 +341,7 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_EN_EMIO_CD_SDIO1 {0} \
    CONFIG.PCW_EN_EMIO_ENET0 {0} \
    CONFIG.PCW_EN_EMIO_ENET1 {0} \
-   CONFIG.PCW_EN_EMIO_GPIO {0} \
+   CONFIG.PCW_EN_EMIO_GPIO {1} \
    CONFIG.PCW_EN_EMIO_I2C0 {1} \
    CONFIG.PCW_EN_EMIO_I2C1 {0} \
    CONFIG.PCW_EN_EMIO_MODEM_UART0 {0} \
@@ -426,9 +427,9 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_GP1_NUM_READ_THREADS {4} \
    CONFIG.PCW_GP1_NUM_WRITE_THREADS {4} \
    CONFIG.PCW_GPIO_BASEADDR {0xE000A000} \
-   CONFIG.PCW_GPIO_EMIO_GPIO_ENABLE {0} \
-   CONFIG.PCW_GPIO_EMIO_GPIO_IO {<Select>} \
-   CONFIG.PCW_GPIO_EMIO_GPIO_WIDTH {64} \
+   CONFIG.PCW_GPIO_EMIO_GPIO_ENABLE {1} \
+   CONFIG.PCW_GPIO_EMIO_GPIO_IO {6} \
+   CONFIG.PCW_GPIO_EMIO_GPIO_WIDTH {6} \
    CONFIG.PCW_GPIO_HIGHADDR {0xE000AFFF} \
    CONFIG.PCW_GPIO_MIO_GPIO_ENABLE {1} \
    CONFIG.PCW_GPIO_MIO_GPIO_IO {MIO} \
@@ -780,7 +781,7 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_PCAP_PERIPHERAL_CLKSRC {IO PLL} \
    CONFIG.PCW_PCAP_PERIPHERAL_DIVISOR0 {5} \
    CONFIG.PCW_PCAP_PERIPHERAL_FREQMHZ {200} \
-   CONFIG.PCW_PERIPHERAL_BOARD_PRESET {None} \
+   CONFIG.PCW_PERIPHERAL_BOARD_PRESET {part0} \
    CONFIG.PCW_PJTAG_PERIPHERAL_ENABLE {0} \
    CONFIG.PCW_PJTAG_PJTAG_IO {<Select>} \
    CONFIG.PCW_PLL_BYPASSMODE_ENABLE {0} \
@@ -1114,14 +1115,13 @@ proc create_root_design { parentCell } {
  ] $xadc_wiz_0
 
   set_property -dict [ list \
-   CONFIG.DATA_WIDTH {32} \
-   CONFIG.ADDR_WIDTH {11} \
-   CONFIG.READ_WRITE_MODE {READ_WRITE} \
    CONFIG.HAS_WSTRB {1} \
    CONFIG.HAS_BRESP {1} \
    CONFIG.HAS_RRESP {1} \
+   CONFIG.SUPPORTS_NARROW_BURST {0} \
    CONFIG.NUM_READ_OUTSTANDING {1} \
    CONFIG.NUM_WRITE_OUTSTANDING {1} \
+   CONFIG.MAX_BURST_LENGTH {1} \
  ] [get_bd_intf_pins /xadc_wiz_0/s_axi_lite]
 
   # Create instance: xlconcat_0, and set properties
@@ -1147,6 +1147,7 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net axi_gpio_1_GPIO2 [get_bd_intf_ports shield_dp26_dp41] [get_bd_intf_pins axi_gpio_shield/GPIO2]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
+  connect_bd_intf_net -intf_net processing_system7_0_GPIO_0 [get_bd_intf_ports GPIO_0] [get_bd_intf_pins processing_system7_0/GPIO_0]
   connect_bd_intf_net -intf_net processing_system7_0_IIC_0 [get_bd_intf_ports Shield_I2C] [get_bd_intf_pins processing_system7_0/IIC_0]
   connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins ps7_0_axi_periph/S00_AXI]
   connect_bd_intf_net -intf_net processing_system7_0_SPI_0 [get_bd_intf_ports Shield_SPI] [get_bd_intf_pins processing_system7_0/SPI_0]

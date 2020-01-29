@@ -1,8 +1,8 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
---Date        : Mon Apr 30 11:47:21 2018
---Host        : ubuntu running 64-bit Ubuntu 16.04.3 LTS
+--Date        : Fri Dec 13 15:33:10 2019
+--Host        : fractal-lnx running 64-bit Debian GNU/Linux 10 (buster)
 --Command     : generate_target cora_z7_10_wrapper.bd
 --Design      : cora_z7_10_wrapper
 --Purpose     : IP block netlist
@@ -34,6 +34,7 @@ entity cora_z7_10_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
+    GPIO_0_tri_io : inout STD_LOGIC_VECTOR ( 5 downto 0 );
     Shield_I2C_scl_io : inout STD_LOGIC;
     Shield_I2C_sda_io : inout STD_LOGIC;
     Shield_SPI_io0_io : inout STD_LOGIC;
@@ -120,7 +121,6 @@ architecture STRUCTURE of cora_z7_10_wrapper is
     shield_dp26_dp41_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
     shield_dp26_dp41_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
     shield_dp26_dp41_tri_t : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    rgb_led : out STD_LOGIC_VECTOR ( 5 downto 0 );
     vaux6_v_n : in STD_LOGIC;
     vaux6_v_p : in STD_LOGIC;
     vaux8_v_n : in STD_LOGIC;
@@ -140,7 +140,11 @@ architecture STRUCTURE of cora_z7_10_wrapper is
     vaux1_v_n : in STD_LOGIC;
     vaux1_v_p : in STD_LOGIC;
     vaux15_v_n : in STD_LOGIC;
-    vaux15_v_p : in STD_LOGIC
+    vaux15_v_p : in STD_LOGIC;
+    rgb_led : out STD_LOGIC_VECTOR ( 5 downto 0 );
+    GPIO_0_tri_i : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    GPIO_0_tri_o : out STD_LOGIC_VECTOR ( 5 downto 0 );
+    GPIO_0_tri_t : out STD_LOGIC_VECTOR ( 5 downto 0 )
   );
   end component cora_z7_10;
   component IOBUF is
@@ -151,6 +155,30 @@ architecture STRUCTURE of cora_z7_10_wrapper is
     IO : inout STD_LOGIC
   );
   end component IOBUF;
+  signal GPIO_0_tri_i_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal GPIO_0_tri_i_1 : STD_LOGIC_VECTOR ( 1 to 1 );
+  signal GPIO_0_tri_i_2 : STD_LOGIC_VECTOR ( 2 to 2 );
+  signal GPIO_0_tri_i_3 : STD_LOGIC_VECTOR ( 3 to 3 );
+  signal GPIO_0_tri_i_4 : STD_LOGIC_VECTOR ( 4 to 4 );
+  signal GPIO_0_tri_i_5 : STD_LOGIC_VECTOR ( 5 to 5 );
+  signal GPIO_0_tri_io_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal GPIO_0_tri_io_1 : STD_LOGIC_VECTOR ( 1 to 1 );
+  signal GPIO_0_tri_io_2 : STD_LOGIC_VECTOR ( 2 to 2 );
+  signal GPIO_0_tri_io_3 : STD_LOGIC_VECTOR ( 3 to 3 );
+  signal GPIO_0_tri_io_4 : STD_LOGIC_VECTOR ( 4 to 4 );
+  signal GPIO_0_tri_io_5 : STD_LOGIC_VECTOR ( 5 to 5 );
+  signal GPIO_0_tri_o_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal GPIO_0_tri_o_1 : STD_LOGIC_VECTOR ( 1 to 1 );
+  signal GPIO_0_tri_o_2 : STD_LOGIC_VECTOR ( 2 to 2 );
+  signal GPIO_0_tri_o_3 : STD_LOGIC_VECTOR ( 3 to 3 );
+  signal GPIO_0_tri_o_4 : STD_LOGIC_VECTOR ( 4 to 4 );
+  signal GPIO_0_tri_o_5 : STD_LOGIC_VECTOR ( 5 to 5 );
+  signal GPIO_0_tri_t_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal GPIO_0_tri_t_1 : STD_LOGIC_VECTOR ( 1 to 1 );
+  signal GPIO_0_tri_t_2 : STD_LOGIC_VECTOR ( 2 to 2 );
+  signal GPIO_0_tri_t_3 : STD_LOGIC_VECTOR ( 3 to 3 );
+  signal GPIO_0_tri_t_4 : STD_LOGIC_VECTOR ( 4 to 4 );
+  signal GPIO_0_tri_t_5 : STD_LOGIC_VECTOR ( 5 to 5 );
   signal Shield_I2C_scl_i : STD_LOGIC;
   signal Shield_I2C_scl_o : STD_LOGIC;
   signal Shield_I2C_scl_t : STD_LOGIC;
@@ -338,6 +366,48 @@ architecture STRUCTURE of cora_z7_10_wrapper is
   signal user_dio_tri_t_8 : STD_LOGIC_VECTOR ( 8 to 8 );
   signal user_dio_tri_t_9 : STD_LOGIC_VECTOR ( 9 to 9 );
 begin
+GPIO_0_tri_iobuf_0: component IOBUF
+     port map (
+      I => GPIO_0_tri_o_0(0),
+      IO => GPIO_0_tri_io(0),
+      O => GPIO_0_tri_i_0(0),
+      T => GPIO_0_tri_t_0(0)
+    );
+GPIO_0_tri_iobuf_1: component IOBUF
+     port map (
+      I => GPIO_0_tri_o_1(1),
+      IO => GPIO_0_tri_io(1),
+      O => GPIO_0_tri_i_1(1),
+      T => GPIO_0_tri_t_1(1)
+    );
+GPIO_0_tri_iobuf_2: component IOBUF
+     port map (
+      I => GPIO_0_tri_o_2(2),
+      IO => GPIO_0_tri_io(2),
+      O => GPIO_0_tri_i_2(2),
+      T => GPIO_0_tri_t_2(2)
+    );
+GPIO_0_tri_iobuf_3: component IOBUF
+     port map (
+      I => GPIO_0_tri_o_3(3),
+      IO => GPIO_0_tri_io(3),
+      O => GPIO_0_tri_i_3(3),
+      T => GPIO_0_tri_t_3(3)
+    );
+GPIO_0_tri_iobuf_4: component IOBUF
+     port map (
+      I => GPIO_0_tri_o_4(4),
+      IO => GPIO_0_tri_io(4),
+      O => GPIO_0_tri_i_4(4),
+      T => GPIO_0_tri_t_4(4)
+    );
+GPIO_0_tri_iobuf_5: component IOBUF
+     port map (
+      I => GPIO_0_tri_o_5(5),
+      IO => GPIO_0_tri_io(5),
+      O => GPIO_0_tri_i_5(5),
+      T => GPIO_0_tri_t_5(5)
+    );
 Shield_I2C_scl_iobuf: component IOBUF
      port map (
       I => Shield_I2C_scl_o,
@@ -403,6 +473,24 @@ cora_z7_10_i: component cora_z7_10
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
+      GPIO_0_tri_i(5) => GPIO_0_tri_i_5(5),
+      GPIO_0_tri_i(4) => GPIO_0_tri_i_4(4),
+      GPIO_0_tri_i(3) => GPIO_0_tri_i_3(3),
+      GPIO_0_tri_i(2) => GPIO_0_tri_i_2(2),
+      GPIO_0_tri_i(1) => GPIO_0_tri_i_1(1),
+      GPIO_0_tri_i(0) => GPIO_0_tri_i_0(0),
+      GPIO_0_tri_o(5) => GPIO_0_tri_o_5(5),
+      GPIO_0_tri_o(4) => GPIO_0_tri_o_4(4),
+      GPIO_0_tri_o(3) => GPIO_0_tri_o_3(3),
+      GPIO_0_tri_o(2) => GPIO_0_tri_o_2(2),
+      GPIO_0_tri_o(1) => GPIO_0_tri_o_1(1),
+      GPIO_0_tri_o(0) => GPIO_0_tri_o_0(0),
+      GPIO_0_tri_t(5) => GPIO_0_tri_t_5(5),
+      GPIO_0_tri_t(4) => GPIO_0_tri_t_4(4),
+      GPIO_0_tri_t(3) => GPIO_0_tri_t_3(3),
+      GPIO_0_tri_t(2) => GPIO_0_tri_t_2(2),
+      GPIO_0_tri_t(1) => GPIO_0_tri_t_1(1),
+      GPIO_0_tri_t(0) => GPIO_0_tri_t_0(0),
       Shield_I2C_scl_i => Shield_I2C_scl_i,
       Shield_I2C_scl_o => Shield_I2C_scl_o,
       Shield_I2C_scl_t => Shield_I2C_scl_t,

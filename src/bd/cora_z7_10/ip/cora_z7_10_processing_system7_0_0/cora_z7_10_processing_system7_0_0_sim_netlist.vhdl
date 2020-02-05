@@ -1,10 +1,10 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
--- Date        : Fri Dec 13 15:34:28 2019
--- Host        : fractal-lnx running 64-bit Debian GNU/Linux 10 (buster)
+-- Date        : Tue Feb  4 15:27:50 2020
+-- Host        : crystal-lnx running 64-bit Debian GNU/Linux 10 (buster)
 -- Command     : write_vhdl -force -mode funcsim
---               /home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/cora_z7_10_processing_system7_0_0_sim_netlist.vhdl
+--               /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/cora_z7_10_processing_system7_0_0_sim_netlist.vhdl
 -- Design      : cora_z7_10_processing_system7_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -70,9 +70,9 @@ entity cora_z7_10_processing_system7_0_0_processing_system7_v5_5_processing_syst
     ENET1_MDIO_I : in STD_LOGIC;
     ENET1_EXT_INTIN : in STD_LOGIC;
     ENET1_GMII_RXD : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    GPIO_I : in STD_LOGIC_VECTOR ( 5 downto 0 );
-    GPIO_O : out STD_LOGIC_VECTOR ( 5 downto 0 );
-    GPIO_T : out STD_LOGIC_VECTOR ( 5 downto 0 );
+    GPIO_I : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    GPIO_O : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    GPIO_T : out STD_LOGIC_VECTOR ( 7 downto 0 );
     I2C0_SDA_I : in STD_LOGIC;
     I2C0_SDA_O : out STD_LOGIC;
     I2C0_SDA_T : out STD_LOGIC;
@@ -709,7 +709,7 @@ entity cora_z7_10_processing_system7_0_0_processing_system7_v5_5_processing_syst
   attribute C_DQ_WIDTH : integer;
   attribute C_DQ_WIDTH of cora_z7_10_processing_system7_0_0_processing_system7_v5_5_processing_system7 : entity is 32;
   attribute C_EMIO_GPIO_WIDTH : integer;
-  attribute C_EMIO_GPIO_WIDTH of cora_z7_10_processing_system7_0_0_processing_system7_v5_5_processing_system7 : entity is 6;
+  attribute C_EMIO_GPIO_WIDTH of cora_z7_10_processing_system7_0_0_processing_system7_v5_5_processing_system7 : entity is 8;
   attribute C_EN_EMIO_ENET0 : integer;
   attribute C_EN_EMIO_ENET0 of cora_z7_10_processing_system7_0_0_processing_system7_v5_5_processing_system7 : entity is 0;
   attribute C_EN_EMIO_ENET1 : integer;
@@ -901,7 +901,7 @@ architecture STRUCTURE of cora_z7_10_processing_system7_0_0_processing_system7_v
   signal buffered_PS_CLK : STD_LOGIC;
   signal buffered_PS_PORB : STD_LOGIC;
   signal buffered_PS_SRSTB : STD_LOGIC;
-  signal gpio_out_t_n : STD_LOGIC_VECTOR ( 5 downto 0 );
+  signal gpio_out_t_n : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal NLW_PS7_i_EMIOENET0GMIITXEN_UNCONNECTED : STD_LOGIC;
   signal NLW_PS7_i_EMIOENET0GMIITXER_UNCONNECTED : STD_LOGIC;
   signal NLW_PS7_i_EMIOENET1GMIITXEN_UNCONNECTED : STD_LOGIC;
@@ -911,8 +911,8 @@ architecture STRUCTURE of cora_z7_10_processing_system7_0_0_processing_system7_v
   signal NLW_PS7_i_EMIOTRACECTL_UNCONNECTED : STD_LOGIC;
   signal NLW_PS7_i_EMIOENET0GMIITXD_UNCONNECTED : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal NLW_PS7_i_EMIOENET1GMIITXD_UNCONNECTED : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal NLW_PS7_i_EMIOGPIOO_UNCONNECTED : STD_LOGIC_VECTOR ( 63 downto 6 );
-  signal NLW_PS7_i_EMIOGPIOTN_UNCONNECTED : STD_LOGIC_VECTOR ( 63 downto 6 );
+  signal NLW_PS7_i_EMIOGPIOO_UNCONNECTED : STD_LOGIC_VECTOR ( 63 downto 8 );
+  signal NLW_PS7_i_EMIOGPIOTN_UNCONNECTED : STD_LOGIC_VECTOR ( 63 downto 8 );
   signal NLW_PS7_i_EMIOTRACEDATA_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   attribute BOX_TYPE : string;
   attribute BOX_TYPE of DDR_CAS_n_BIBUF : label is "PRIMITIVE";
@@ -1203,6 +1203,22 @@ GND: unisim.vcomponents.GND
       I0 => gpio_out_t_n(5),
       O => GPIO_T(5)
     );
+\GPIO_T[6]_INST_0\: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => gpio_out_t_n(6),
+      O => GPIO_T(6)
+    );
+\GPIO_T[7]_INST_0\: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => gpio_out_t_n(7),
+      O => GPIO_T(7)
+    );
 I2C0_SCL_T_INST_0: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
@@ -1345,12 +1361,12 @@ PS7_i: unisim.vcomponents.PS7
       EMIOENET1PTPSYNCFRAMETX => ENET1_PTP_SYNC_FRAME_TX,
       EMIOENET1SOFRX => ENET1_SOF_RX,
       EMIOENET1SOFTX => ENET1_SOF_TX,
-      EMIOGPIOI(63 downto 6) => B"0000000000000000000000000000000000000000000000000000000000",
-      EMIOGPIOI(5 downto 0) => GPIO_I(5 downto 0),
-      EMIOGPIOO(63 downto 6) => NLW_PS7_i_EMIOGPIOO_UNCONNECTED(63 downto 6),
-      EMIOGPIOO(5 downto 0) => GPIO_O(5 downto 0),
-      EMIOGPIOTN(63 downto 6) => NLW_PS7_i_EMIOGPIOTN_UNCONNECTED(63 downto 6),
-      EMIOGPIOTN(5 downto 0) => gpio_out_t_n(5 downto 0),
+      EMIOGPIOI(63 downto 8) => B"00000000000000000000000000000000000000000000000000000000",
+      EMIOGPIOI(7 downto 0) => GPIO_I(7 downto 0),
+      EMIOGPIOO(63 downto 8) => NLW_PS7_i_EMIOGPIOO_UNCONNECTED(63 downto 8),
+      EMIOGPIOO(7 downto 0) => GPIO_O(7 downto 0),
+      EMIOGPIOTN(63 downto 8) => NLW_PS7_i_EMIOGPIOTN_UNCONNECTED(63 downto 8),
+      EMIOGPIOTN(7 downto 0) => gpio_out_t_n(7 downto 0),
       EMIOI2C0SCLI => I2C0_SCL_I,
       EMIOI2C0SCLO => I2C0_SCL_O,
       EMIOI2C0SCLTN => I2C0_SCL_T_n,
@@ -2867,9 +2883,9 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity cora_z7_10_processing_system7_0_0 is
   port (
-    GPIO_I : in STD_LOGIC_VECTOR ( 5 downto 0 );
-    GPIO_O : out STD_LOGIC_VECTOR ( 5 downto 0 );
-    GPIO_T : out STD_LOGIC_VECTOR ( 5 downto 0 );
+    GPIO_I : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    GPIO_O : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    GPIO_T : out STD_LOGIC_VECTOR ( 7 downto 0 );
     I2C0_SDA_I : in STD_LOGIC;
     I2C0_SDA_O : out STD_LOGIC;
     I2C0_SDA_T : out STD_LOGIC;
@@ -3250,7 +3266,7 @@ architecture STRUCTURE of cora_z7_10_processing_system7_0_0 is
   attribute C_DQ_WIDTH : integer;
   attribute C_DQ_WIDTH of inst : label is 32;
   attribute C_EMIO_GPIO_WIDTH : integer;
-  attribute C_EMIO_GPIO_WIDTH of inst : label is 6;
+  attribute C_EMIO_GPIO_WIDTH of inst : label is 8;
   attribute C_EN_EMIO_ENET0 : integer;
   attribute C_EN_EMIO_ENET0 of inst : label is 0;
   attribute C_EN_EMIO_ENET1 : integer;
@@ -3611,9 +3627,9 @@ inst: entity work.cora_z7_10_processing_system7_0_0_processing_system7_v5_5_proc
       FTMT_P2F_TRIG_1 => NLW_inst_FTMT_P2F_TRIG_1_UNCONNECTED,
       FTMT_P2F_TRIG_2 => NLW_inst_FTMT_P2F_TRIG_2_UNCONNECTED,
       FTMT_P2F_TRIG_3 => NLW_inst_FTMT_P2F_TRIG_3_UNCONNECTED,
-      GPIO_I(5 downto 0) => GPIO_I(5 downto 0),
-      GPIO_O(5 downto 0) => GPIO_O(5 downto 0),
-      GPIO_T(5 downto 0) => GPIO_T(5 downto 0),
+      GPIO_I(7 downto 0) => GPIO_I(7 downto 0),
+      GPIO_O(7 downto 0) => GPIO_O(7 downto 0),
+      GPIO_T(7 downto 0) => GPIO_T(7 downto 0),
       I2C0_SCL_I => I2C0_SCL_I,
       I2C0_SCL_O => I2C0_SCL_O,
       I2C0_SCL_T => I2C0_SCL_T,

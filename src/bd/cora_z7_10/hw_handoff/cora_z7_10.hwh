@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Dec 13 15:33:21 2019" VIVADOVERSION="2017.4">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Feb  4 17:55:23 2020" VIVADOVERSION="2017.4">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:cora-z7-10:part0:1.0" DEVICE="7z010" NAME="cora_z7_10" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -25,20 +25,6 @@
     <PORT DIR="IO" NAME="FIXED_IO_ps_srstb" SIGIS="undef"/>
     <PORT DIR="IO" NAME="FIXED_IO_ps_clk" SIGIS="undef"/>
     <PORT DIR="IO" NAME="FIXED_IO_ps_porb" SIGIS="undef"/>
-    <PORT DIR="I" NAME="Shield_SPI_sck_i" SIGIS="undef"/>
-    <PORT DIR="O" NAME="Shield_SPI_sck_o" SIGIS="undef"/>
-    <PORT DIR="O" NAME="Shield_SPI_sck_t" SIGIS="undef"/>
-    <PORT DIR="I" NAME="Shield_SPI_io0_i" SIGIS="undef"/>
-    <PORT DIR="O" NAME="Shield_SPI_io0_o" SIGIS="undef"/>
-    <PORT DIR="O" NAME="Shield_SPI_io0_t" SIGIS="undef"/>
-    <PORT DIR="I" NAME="Shield_SPI_io1_i" SIGIS="undef"/>
-    <PORT DIR="O" NAME="Shield_SPI_io1_o" SIGIS="undef"/>
-    <PORT DIR="O" NAME="Shield_SPI_io1_t" SIGIS="undef"/>
-    <PORT DIR="I" NAME="Shield_SPI_ss_i" SIGIS="undef"/>
-    <PORT DIR="O" NAME="Shield_SPI_ss_o" SIGIS="undef"/>
-    <PORT DIR="O" NAME="Shield_SPI_ss1_o" SIGIS="undef"/>
-    <PORT DIR="O" NAME="Shield_SPI_ss2_o" SIGIS="undef"/>
-    <PORT DIR="O" NAME="Shield_SPI_ss_t" SIGIS="undef"/>
     <PORT DIR="I" NAME="Shield_I2C_sda_i" SIGIS="undef"/>
     <PORT DIR="O" NAME="Shield_I2C_sda_o" SIGIS="undef"/>
     <PORT DIR="O" NAME="Shield_I2C_sda_t" SIGIS="undef"/>
@@ -75,14 +61,28 @@
     <PORT DIR="I" NAME="vaux1_v_p" SIGIS="undef"/>
     <PORT DIR="I" NAME="vaux15_v_n" SIGIS="undef"/>
     <PORT DIR="I" NAME="vaux15_v_p" SIGIS="undef"/>
+    <PORT DIR="I" LEFT="7" NAME="GPIO_0_tri_i" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="O" LEFT="7" NAME="GPIO_0_tri_o" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="O" LEFT="7" NAME="GPIO_0_tri_t" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="I" NAME="SPI_0_sck_i" SIGIS="undef"/>
+    <PORT DIR="O" NAME="SPI_0_sck_o" SIGIS="undef"/>
+    <PORT DIR="O" NAME="SPI_0_sck_t" SIGIS="undef"/>
+    <PORT DIR="I" NAME="SPI_0_io0_i" SIGIS="undef"/>
+    <PORT DIR="O" NAME="SPI_0_io0_o" SIGIS="undef"/>
+    <PORT DIR="O" NAME="SPI_0_io0_t" SIGIS="undef"/>
+    <PORT DIR="I" NAME="SPI_0_io1_i" SIGIS="undef"/>
+    <PORT DIR="O" NAME="SPI_0_io1_o" SIGIS="undef"/>
+    <PORT DIR="O" NAME="SPI_0_io1_t" SIGIS="undef"/>
+    <PORT DIR="I" NAME="SPI_0_ss_i" SIGIS="undef"/>
+    <PORT DIR="O" NAME="SPI_0_ss_o" SIGIS="undef"/>
+    <PORT DIR="O" NAME="SPI_0_ss1_o" SIGIS="undef"/>
+    <PORT DIR="O" NAME="SPI_0_ss2_o" SIGIS="undef"/>
+    <PORT DIR="O" NAME="SPI_0_ss_t" SIGIS="undef"/>
     <PORT DIR="O" LEFT="5" NAME="rgb_led" RIGHT="0" SIGIS="undef" SIGNAME="pwm_rgb_pwm">
       <CONNECTIONS>
         <CONNECTION INSTANCE="pwm_rgb" PORT="pwm"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="5" NAME="GPIO_0_tri_i" RIGHT="0" SIGIS="undef"/>
-    <PORT DIR="O" LEFT="5" NAME="GPIO_0_tri_o" RIGHT="0" SIGIS="undef"/>
-    <PORT DIR="O" LEFT="5" NAME="GPIO_0_tri_t" RIGHT="0" SIGIS="undef"/>
   </EXTERNALPORTS>
 
   <EXTERNALINTERFACES>
@@ -128,24 +128,6 @@
         <PORTMAP LOGICAL="PS_SRSTB" PHYSICAL="FIXED_IO_ps_srstb"/>
         <PORTMAP LOGICAL="PS_CLK" PHYSICAL="FIXED_IO_ps_clk"/>
         <PORTMAP LOGICAL="PS_PORB" PHYSICAL="FIXED_IO_ps_porb"/>
-      </PORTMAPS>
-    </BUSINTERFACE>
-    <BUSINTERFACE BUSNAME="processing_system7_0_SPI_0" NAME="Shield_SPI" TYPE="INITIATOR">
-      <PORTMAPS>
-        <PORTMAP LOGICAL="SCK_I" PHYSICAL="Shield_SPI_sck_i"/>
-        <PORTMAP LOGICAL="SCK_O" PHYSICAL="Shield_SPI_sck_o"/>
-        <PORTMAP LOGICAL="SCK_T" PHYSICAL="Shield_SPI_sck_t"/>
-        <PORTMAP LOGICAL="IO0_I" PHYSICAL="Shield_SPI_io0_i"/>
-        <PORTMAP LOGICAL="IO0_O" PHYSICAL="Shield_SPI_io0_o"/>
-        <PORTMAP LOGICAL="IO0_T" PHYSICAL="Shield_SPI_io0_t"/>
-        <PORTMAP LOGICAL="IO1_I" PHYSICAL="Shield_SPI_io1_i"/>
-        <PORTMAP LOGICAL="IO1_O" PHYSICAL="Shield_SPI_io1_o"/>
-        <PORTMAP LOGICAL="IO1_T" PHYSICAL="Shield_SPI_io1_t"/>
-        <PORTMAP LOGICAL="SS_I" PHYSICAL="Shield_SPI_ss_i"/>
-        <PORTMAP LOGICAL="SS_O" PHYSICAL="Shield_SPI_ss_o"/>
-        <PORTMAP LOGICAL="SS1_O" PHYSICAL="Shield_SPI_ss1_o"/>
-        <PORTMAP LOGICAL="SS2_O" PHYSICAL="Shield_SPI_ss2_o"/>
-        <PORTMAP LOGICAL="SS_T" PHYSICAL="Shield_SPI_ss_t"/>
       </PORTMAPS>
     </BUSINTERFACE>
     <BUSINTERFACE BUSNAME="processing_system7_0_IIC_0" NAME="Shield_I2C" TYPE="INITIATOR">
@@ -250,6 +232,27 @@
         <PORTMAP LOGICAL="TRI_O" PHYSICAL="GPIO_0_tri_o"/>
         <PORTMAP LOGICAL="TRI_T" PHYSICAL="GPIO_0_tri_t"/>
       </PORTMAPS>
+    </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="processing_system7_0_SPI_0" NAME="SPI_0" TYPE="INITIATOR">
+      <PORTMAPS>
+        <PORTMAP LOGICAL="SCK_I" PHYSICAL="SPI_0_sck_i"/>
+        <PORTMAP LOGICAL="SCK_O" PHYSICAL="SPI_0_sck_o"/>
+        <PORTMAP LOGICAL="SCK_T" PHYSICAL="SPI_0_sck_t"/>
+        <PORTMAP LOGICAL="IO0_I" PHYSICAL="SPI_0_io0_i"/>
+        <PORTMAP LOGICAL="IO0_O" PHYSICAL="SPI_0_io0_o"/>
+        <PORTMAP LOGICAL="IO0_T" PHYSICAL="SPI_0_io0_t"/>
+        <PORTMAP LOGICAL="IO1_I" PHYSICAL="SPI_0_io1_i"/>
+        <PORTMAP LOGICAL="IO1_O" PHYSICAL="SPI_0_io1_o"/>
+        <PORTMAP LOGICAL="IO1_T" PHYSICAL="SPI_0_io1_t"/>
+        <PORTMAP LOGICAL="SS_I" PHYSICAL="SPI_0_ss_i"/>
+        <PORTMAP LOGICAL="SS_O" PHYSICAL="SPI_0_ss_o"/>
+        <PORTMAP LOGICAL="SS1_O" PHYSICAL="SPI_0_ss1_o"/>
+        <PORTMAP LOGICAL="SS2_O" PHYSICAL="SPI_0_ss2_o"/>
+        <PORTMAP LOGICAL="SS_T" PHYSICAL="SPI_0_ss_t"/>
+      </PORTMAPS>
+    </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="__NOC__" NAME="Shield_SPI" TYPE="INITIATOR">
+      <PORTMAPS/>
     </BUSINTERFACE>
   </EXTERNALINTERFACES>
 
@@ -1059,7 +1062,7 @@
         <PARAMETER NAME="USE_TRACE_DATA_EDGE_DETECTOR" VALUE="0"/>
         <PARAMETER NAME="C_TRACE_PIPELINE_WIDTH" VALUE="8"/>
         <PARAMETER NAME="C_TRACE_BUFFER_CLOCK_DELAY" VALUE="12"/>
-        <PARAMETER NAME="C_EMIO_GPIO_WIDTH" VALUE="6"/>
+        <PARAMETER NAME="C_EMIO_GPIO_WIDTH" VALUE="8"/>
         <PARAMETER NAME="C_INCLUDE_ACP_TRANS_CHECK" VALUE="0"/>
         <PARAMETER NAME="C_USE_DEFAULT_ACP_USER_VAL" VALUE="0"/>
         <PARAMETER NAME="C_S_AXI_ACP_ARUSER_VAL" VALUE="31"/>
@@ -1393,7 +1396,7 @@
         <PARAMETER NAME="PCW_USE_EXPANDED_PS_SLCR_REGISTERS" VALUE="0"/>
         <PARAMETER NAME="PCW_USE_CORESIGHT" VALUE="0"/>
         <PARAMETER NAME="PCW_EN_EMIO_SRAM_INT" VALUE="0"/>
-        <PARAMETER NAME="PCW_GPIO_EMIO_GPIO_WIDTH" VALUE="6"/>
+        <PARAMETER NAME="PCW_GPIO_EMIO_GPIO_WIDTH" VALUE="8"/>
         <PARAMETER NAME="PCW_GP0_NUM_WRITE_THREADS" VALUE="4"/>
         <PARAMETER NAME="PCW_GP0_NUM_READ_THREADS" VALUE="4"/>
         <PARAMETER NAME="PCW_GP1_NUM_WRITE_THREADS" VALUE="4"/>
@@ -1681,7 +1684,7 @@
         <PARAMETER NAME="PCW_GPIO_MIO_GPIO_ENABLE" VALUE="1"/>
         <PARAMETER NAME="PCW_GPIO_MIO_GPIO_IO" VALUE="MIO"/>
         <PARAMETER NAME="PCW_GPIO_EMIO_GPIO_ENABLE" VALUE="1"/>
-        <PARAMETER NAME="PCW_GPIO_EMIO_GPIO_IO" VALUE="6"/>
+        <PARAMETER NAME="PCW_GPIO_EMIO_GPIO_IO" VALUE="8"/>
         <PARAMETER NAME="PCW_APU_CLK_RATIO_ENABLE" VALUE="6:2:1"/>
         <PARAMETER NAME="PCW_ENET0_PERIPHERAL_FREQMHZ" VALUE="1000 Mbps"/>
         <PARAMETER NAME="PCW_ENET1_PERIPHERAL_FREQMHZ" VALUE="1000 Mbps"/>
@@ -1987,9 +1990,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="5" NAME="GPIO_I" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="5" NAME="GPIO_O" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="5" NAME="GPIO_T" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="7" NAME="GPIO_I" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="GPIO_O" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="GPIO_T" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" NAME="I2C0_SDA_I" SIGIS="undef"/>
         <PORT DIR="O" NAME="I2C0_SDA_O" SIGIS="undef"/>
         <PORT DIR="O" NAME="I2C0_SDA_T" SIGIS="undef"/>

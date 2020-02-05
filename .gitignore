@@ -56,12 +56,15 @@ src/ip/*/**
 
 
 # ignore everything in project folder
-!proj/*
+#!proj/*
 # except this file and project generators
 #!proj/create_project.tcl
 #!proj/cleanup.cmd
 #!proj/cleanup.sh
 #!proj/release.py
+
+proj/cora_z7_10.runs/*
+proj/cora_z7_10.ip_user_files/bd/cora_z7_10/Cora-Z7-10-base-linux/
 
 # keep the empty folders
 !**/.keep

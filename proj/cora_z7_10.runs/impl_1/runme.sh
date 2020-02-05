@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/jcoffman/work/Cora-Z7-10-base-linux/proj/cora_z7_10.runs/impl_1'
+HD_PWD='/home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/proj/cora_z7_10.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -37,7 +37,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .init_design.begin.rst
+/bin/touch .write_bitstream.begin.rst
 EAStep vivado -log cora_z7_10_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source cora_z7_10_wrapper.tcl -notrace
 
 

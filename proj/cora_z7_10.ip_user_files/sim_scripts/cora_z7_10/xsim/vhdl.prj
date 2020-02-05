@@ -1,21 +1,21 @@
 vhdl xil_defaultlib  \
-"../../../bd/cora_z7_10/ip/cora_z7_10_axi_gpio_0_0/sim/cora_z7_10_axi_gpio_0_0.vhd" \
-"../../../bd/cora_z7_10/ip/cora_z7_10_axi_gpio_1_0/sim/cora_z7_10_axi_gpio_1_0.vhd" \
-"../../../bd/cora_z7_10/ip/cora_z7_10_rst_ps7_0_100M_0/sim/cora_z7_10_rst_ps7_0_100M_0.vhd" \
-"../../../bd/cora_z7_10/sim/cora_z7_10.vhd" \
-"../../../bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/proc_common_v3_30_a/hdl/src/vhdl/cora_z7_10_xadc_wiz_0_1_conv_funs_pkg.vhd" \
-"../../../bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/proc_common_v3_30_a/hdl/src/vhdl/cora_z7_10_xadc_wiz_0_1_proc_common_pkg.vhd" \
-"../../../bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/proc_common_v3_30_a/hdl/src/vhdl/cora_z7_10_xadc_wiz_0_1_ipif_pkg.vhd" \
-"../../../bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/proc_common_v3_30_a/hdl/src/vhdl/cora_z7_10_xadc_wiz_0_1_family_support.vhd" \
-"../../../bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/proc_common_v3_30_a/hdl/src/vhdl/cora_z7_10_xadc_wiz_0_1_family.vhd" \
-"../../../bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/proc_common_v3_30_a/hdl/src/vhdl/cora_z7_10_xadc_wiz_0_1_soft_reset.vhd" \
-"../../../bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/proc_common_v3_30_a/hdl/src/vhdl/cora_z7_10_xadc_wiz_0_1_pselect_f.vhd" \
-"../../../bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/axi_lite_ipif_v1_01_a/hdl/src/vhdl/cora_z7_10_xadc_wiz_0_1_address_decoder.vhd" \
-"../../../bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/axi_lite_ipif_v1_01_a/hdl/src/vhdl/cora_z7_10_xadc_wiz_0_1_slave_attachment.vhd" \
-"../../../bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/interrupt_control_v2_01_a/hdl/src/vhdl/cora_z7_10_xadc_wiz_0_1_interrupt_control.vhd" \
-"../../../bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/axi_lite_ipif_v1_01_a/hdl/src/vhdl/cora_z7_10_xadc_wiz_0_1_axi_lite_ipif.vhd" \
-"../../../bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/cora_z7_10_xadc_wiz_0_1_xadc_core_drp.vhd" \
-"../../../bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/cora_z7_10_xadc_wiz_0_1_axi_xadc.vhd" \
-"../../../bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/cora_z7_10_xadc_wiz_0_1.vhd" \
+"../../../../../src/bd/cora_z7_10/ip/cora_z7_10_axi_gpio_0_0/sim/cora_z7_10_axi_gpio_0_0.vhd" \
+"../../../../../src/bd/cora_z7_10/ip/cora_z7_10_axi_gpio_1_0/sim/cora_z7_10_axi_gpio_1_0.vhd" \
+"../../../../../src/bd/cora_z7_10/ip/cora_z7_10_rst_ps7_0_100M_0/sim/cora_z7_10_rst_ps7_0_100M_0.vhd" \
+"../../../../../src/bd/cora_z7_10/sim/cora_z7_10.vhd" \
+"../../../../../src/bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/proc_common_v3_30_a/hdl/src/vhdl/cora_z7_10_xadc_wiz_0_1_conv_funs_pkg.vhd" \
+"../../../../../src/bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/proc_common_v3_30_a/hdl/src/vhdl/cora_z7_10_xadc_wiz_0_1_proc_common_pkg.vhd" \
+"../../../../../src/bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/proc_common_v3_30_a/hdl/src/vhdl/cora_z7_10_xadc_wiz_0_1_ipif_pkg.vhd" \
+"../../../../../src/bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/proc_common_v3_30_a/hdl/src/vhdl/cora_z7_10_xadc_wiz_0_1_family_support.vhd" \
+"../../../../../src/bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/proc_common_v3_30_a/hdl/src/vhdl/cora_z7_10_xadc_wiz_0_1_family.vhd" \
+"../../../../../src/bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/proc_common_v3_30_a/hdl/src/vhdl/cora_z7_10_xadc_wiz_0_1_soft_reset.vhd" \
+"../../../../../src/bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/proc_common_v3_30_a/hdl/src/vhdl/cora_z7_10_xadc_wiz_0_1_pselect_f.vhd" \
+"../../../../../src/bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/axi_lite_ipif_v1_01_a/hdl/src/vhdl/cora_z7_10_xadc_wiz_0_1_address_decoder.vhd" \
+"../../../../../src/bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/axi_lite_ipif_v1_01_a/hdl/src/vhdl/cora_z7_10_xadc_wiz_0_1_slave_attachment.vhd" \
+"../../../../../src/bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/interrupt_control_v2_01_a/hdl/src/vhdl/cora_z7_10_xadc_wiz_0_1_interrupt_control.vhd" \
+"../../../../../src/bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/axi_lite_ipif_v1_01_a/hdl/src/vhdl/cora_z7_10_xadc_wiz_0_1_axi_lite_ipif.vhd" \
+"../../../../../src/bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/cora_z7_10_xadc_wiz_0_1_xadc_core_drp.vhd" \
+"../../../../../src/bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/cora_z7_10_xadc_wiz_0_1_axi_xadc.vhd" \
+"../../../../../src/bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/cora_z7_10_xadc_wiz_0_1.vhd" \
 
 nosort

@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/jcoffman/work/Cora-Z7-10-base-linux/proj/cora_z7_10.runs/synth_1'
+HD_PWD='/home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/proj/cora_z7_10.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

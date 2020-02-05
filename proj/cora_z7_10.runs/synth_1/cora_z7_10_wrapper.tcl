@@ -22,35 +22,35 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /home/jcoffman/work/Cora-Z7-10-base-linux/proj/cora_z7_10.cache/wt [current_project]
-set_property parent.project_path /home/jcoffman/work/Cora-Z7-10-base-linux/proj/cora_z7_10.xpr [current_project]
+set_property webtalk.parent_dir /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/proj/cora_z7_10.cache/wt [current_project]
+set_property parent.project_path /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/proj/cora_z7_10.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part digilentinc.com:cora-z7-10:part0:1.0 [current_project]
 set_property ip_repo_paths {
-  /home/jcoffman/work/Cora-Z7-10-base-linux/repo
+  /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/repo
   /tools/vivado_ip_lib
 } [current_project]
-set_property ip_output_repo /home/jcoffman/work/Cora-Z7-10-base-linux/repo/cache [current_project]
+set_property ip_output_repo /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/repo/cache [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_vhdl -library xil_defaultlib /home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/hdl/cora_z7_10_wrapper.vhd
-add_files /home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/cora_z7_10.bd
-set_property used_in_implementation false [get_files -all /home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/cora_z7_10_processing_system7_0_0.xdc]
-set_property used_in_implementation false [get_files -all /home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_axi_gpio_0_0/cora_z7_10_axi_gpio_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_axi_gpio_0_0/cora_z7_10_axi_gpio_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_axi_gpio_0_0/cora_z7_10_axi_gpio_0_0.xdc]
-set_property used_in_implementation false [get_files -all /home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_axi_gpio_1_0/cora_z7_10_axi_gpio_1_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_axi_gpio_1_0/cora_z7_10_axi_gpio_1_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_axi_gpio_1_0/cora_z7_10_axi_gpio_1_0.xdc]
-set_property used_in_implementation false [get_files -all /home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_rst_ps7_0_100M_0/cora_z7_10_rst_ps7_0_100M_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_rst_ps7_0_100M_0/cora_z7_10_rst_ps7_0_100M_0.xdc]
-set_property used_in_implementation false [get_files -all /home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_rst_ps7_0_100M_0/cora_z7_10_rst_ps7_0_100M_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_xbar_0/cora_z7_10_xbar_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/cora_z7_10_xadc_wiz_0_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/cora_z7_10_xadc_wiz_0_1.xdc]
-set_property used_in_implementation false [get_files -all /home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_auto_pc_0/cora_z7_10_auto_pc_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/cora_z7_10_ooc.xdc]
+read_vhdl -library xil_defaultlib /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/hdl/cora_z7_10_wrapper.vhd
+add_files /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/cora_z7_10.bd
+set_property used_in_implementation false [get_files -all /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/cora_z7_10_processing_system7_0_0.xdc]
+set_property used_in_implementation false [get_files -all /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_axi_gpio_0_0/cora_z7_10_axi_gpio_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_axi_gpio_0_0/cora_z7_10_axi_gpio_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_axi_gpio_0_0/cora_z7_10_axi_gpio_0_0.xdc]
+set_property used_in_implementation false [get_files -all /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_axi_gpio_1_0/cora_z7_10_axi_gpio_1_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_axi_gpio_1_0/cora_z7_10_axi_gpio_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_axi_gpio_1_0/cora_z7_10_axi_gpio_1_0.xdc]
+set_property used_in_implementation false [get_files -all /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_rst_ps7_0_100M_0/cora_z7_10_rst_ps7_0_100M_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_rst_ps7_0_100M_0/cora_z7_10_rst_ps7_0_100M_0.xdc]
+set_property used_in_implementation false [get_files -all /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_rst_ps7_0_100M_0/cora_z7_10_rst_ps7_0_100M_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_xbar_0/cora_z7_10_xbar_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/cora_z7_10_xadc_wiz_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_xadc_wiz_0_1/cora_z7_10_xadc_wiz_0_1.xdc]
+set_property used_in_implementation false [get_files -all /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_auto_pc_0/cora_z7_10_auto_pc_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/cora_z7_10_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -60,8 +60,8 @@ set_property used_in_implementation false [get_files -all /home/jcoffman/work/Co
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/jcoffman/work/Cora-Z7-10-base-linux/src/constraints/Cora-Z7-10-Master.xdc
-set_property used_in_implementation false [get_files /home/jcoffman/work/Cora-Z7-10-base-linux/src/constraints/Cora-Z7-10-Master.xdc]
+read_xdc /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/constraints/Cora-Z7-10-Master.xdc
+set_property used_in_implementation false [get_files /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/constraints/Cora-Z7-10-Master.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

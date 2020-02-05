@@ -14,12 +14,12 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 24368 
+INFO: Helper process launched with PID 22682 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1254.516 ; gain = 86.996 ; free physical = 150 ; free virtual = 25539
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1253.340 ; gain = 86.000 ; free physical = 155 ; free virtual = 21942
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'cora_z7_10_processing_system7_0_0' [/home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/synth/cora_z7_10_processing_system7_0_0.v:60]
-INFO: [Synth 8-638] synthesizing module 'processing_system7_v5_5_processing_system7' [/home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:161]
+INFO: [Synth 8-638] synthesizing module 'cora_z7_10_processing_system7_0_0' [/home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/synth/cora_z7_10_processing_system7_0_0.v:60]
+INFO: [Synth 8-638] synthesizing module 'processing_system7_v5_5_processing_system7' [/home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:161]
 	Parameter C_USE_DEFAULT_ACP_USER_VAL bound to: 0 - type: integer 
 	Parameter C_S_AXI_ACP_ARUSER_VAL bound to: 31 - type: integer 
 	Parameter C_S_AXI_ACP_AWUSER_VAL bound to: 31 - type: integer 
@@ -46,7 +46,7 @@ INFO: [Synth 8-638] synthesizing module 'processing_system7_v5_5_processing_syst
 	Parameter C_FCLK_CLK1_BUF bound to: FALSE - type: string 
 	Parameter C_FCLK_CLK2_BUF bound to: FALSE - type: string 
 	Parameter C_FCLK_CLK3_BUF bound to: FALSE - type: string 
-	Parameter C_EMIO_GPIO_WIDTH bound to: 6 - type: integer 
+	Parameter C_EMIO_GPIO_WIDTH bound to: 8 - type: integer 
 	Parameter C_INCLUDE_TRACE_BUFFER bound to: 0 - type: integer 
 	Parameter C_TRACE_BUFFER_FIFO_SIZE bound to: 128 - type: integer 
 	Parameter C_TRACE_BUFFER_CLOCK_DELAY bound to: 12 - type: integer 
@@ -76,17 +76,17 @@ INFO: [Synth 8-638] synthesizing module 'processing_system7_v5_5_processing_syst
 	Parameter C_USE_S_AXI_ACP bound to: 0 - type: integer 
 	Parameter C_GP0_EN_MODIFIABLE_TXN bound to: 0 - type: integer 
 	Parameter C_GP1_EN_MODIFIABLE_TXN bound to: 0 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:1347]
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:1348]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:1347]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:1348]
 INFO: [Synth 8-638] synthesizing module 'BUFG' [/tools/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:607]
 INFO: [Synth 8-256] done synthesizing module 'BUFG' (1#1) [/tools/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:607]
 INFO: [Synth 8-638] synthesizing module 'BIBUF' [/tools/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:268]
 INFO: [Synth 8-256] done synthesizing module 'BIBUF' (2#1) [/tools/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:268]
 INFO: [Synth 8-638] synthesizing module 'PS7' [/tools/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:40559]
 INFO: [Synth 8-256] done synthesizing module 'PS7' (3#1) [/tools/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:40559]
-INFO: [Synth 8-256] done synthesizing module 'processing_system7_v5_5_processing_system7' (4#1) [/home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:161]
-WARNING: [Synth 8-350] instance 'inst' of module 'processing_system7_v5_5_processing_system7' requires 685 connections, but only 672 given [/home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/synth/cora_z7_10_processing_system7_0_0.v:395]
-INFO: [Synth 8-256] done synthesizing module 'cora_z7_10_processing_system7_0_0' (5#1) [/home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/synth/cora_z7_10_processing_system7_0_0.v:60]
+INFO: [Synth 8-256] done synthesizing module 'processing_system7_v5_5_processing_system7' (4#1) [/home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:161]
+WARNING: [Synth 8-350] instance 'inst' of module 'processing_system7_v5_5_processing_system7' requires 685 connections, but only 672 given [/home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/synth/cora_z7_10_processing_system7_0_0.v:395]
+INFO: [Synth 8-256] done synthesizing module 'cora_z7_10_processing_system7_0_0' (5#1) [/home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/synth/cora_z7_10_processing_system7_0_0.v:60]
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_COL
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_CRS
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_RX_DV
@@ -167,7 +167,7 @@ WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has un
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_ATID[1]
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_ATID[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1296.047 ; gain = 128.527 ; free physical = 200 ; free virtual = 25547
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1295.871 ; gain = 128.531 ; free physical = 223 ; free virtual = 21961
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -177,44 +177,44 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1296.047 ; gain = 128.527 ; free physical = 199 ; free virtual = 25548
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1295.871 ; gain = 128.531 ; free physical = 223 ; free virtual = 21962
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/cora_z7_10_processing_system7_0_0.xdc] for cell 'inst'
-Finished Parsing XDC File [/home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/cora_z7_10_processing_system7_0_0.xdc] for cell 'inst'
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/cora_z7_10_processing_system7_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/cora_z7_10_processing_system7_0_0_propImpl.xdc].
+Parsing XDC File [/home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/cora_z7_10_processing_system7_0_0.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/cora_z7_10_processing_system7_0_0.xdc] for cell 'inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/cora_z7_10_processing_system7_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/cora_z7_10_processing_system7_0_0_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/cora_z7_10_processing_system7_0_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [/home/jcoffman/work/Cora-Z7-10-base-linux/proj/cora_z7_10.runs/cora_z7_10_processing_system7_0_0_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [/home/jcoffman/work/Cora-Z7-10-base-linux/proj/cora_z7_10.runs/cora_z7_10_processing_system7_0_0_synth_1/dont_touch.xdc]
+Parsing XDC File [/home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/proj/cora_z7_10.runs/cora_z7_10_processing_system7_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/proj/cora_z7_10.runs/cora_z7_10_processing_system7_0_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1577.508 ; gain = 0.000 ; free physical = 154 ; free virtual = 25045
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1577.332 ; gain = 0.000 ; free physical = 160 ; free virtual = 21776
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:39 . Memory (MB): peak = 1577.508 ; gain = 409.988 ; free physical = 269 ; free virtual = 25150
+Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:31 . Memory (MB): peak = 1577.332 ; gain = 409.992 ; free physical = 233 ; free virtual = 21850
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:39 . Memory (MB): peak = 1577.508 ; gain = 409.988 ; free physical = 269 ; free virtual = 25150
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:31 . Memory (MB): peak = 1577.332 ; gain = 409.992 ; free physical = 233 ; free virtual = 21850
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for inst. (constraint file  /home/jcoffman/work/Cora-Z7-10-base-linux/proj/cora_z7_10.runs/cora_z7_10_processing_system7_0_0_synth_1/dont_touch.xdc, line 9).
+Applied set_property DONT_TOUCH = true for inst. (constraint file  /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/proj/cora_z7_10.runs/cora_z7_10_processing_system7_0_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:40 . Memory (MB): peak = 1577.508 ; gain = 409.988 ; free physical = 283 ; free virtual = 25167
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:31 . Memory (MB): peak = 1577.332 ; gain = 409.992 ; free physical = 229 ; free virtual = 21848
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:40 . Memory (MB): peak = 1577.508 ; gain = 409.988 ; free physical = 270 ; free virtual = 25160
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:32 . Memory (MB): peak = 1577.332 ; gain = 409.992 ; free physical = 209 ; free virtual = 21840
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -271,7 +271,7 @@ WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has un
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET1_GMII_RXD[3]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:40 . Memory (MB): peak = 1577.508 ; gain = 409.988 ; free physical = 255 ; free virtual = 25152
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:32 . Memory (MB): peak = 1577.332 ; gain = 409.992 ; free physical = 198 ; free virtual = 21831
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -283,13 +283,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:49 . Memory (MB): peak = 1751.500 ; gain = 583.980 ; free physical = 159 ; free virtual = 24850
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:39 . Memory (MB): peak = 1751.324 ; gain = 583.984 ; free physical = 205 ; free virtual = 21661
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:49 . Memory (MB): peak = 1771.508 ; gain = 603.988 ; free physical = 157 ; free virtual = 24838
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:39 . Memory (MB): peak = 1771.332 ; gain = 603.992 ; free physical = 192 ; free virtual = 21648
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -301,7 +301,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:50 . Memory (MB): peak = 1779.516 ; gain = 611.996 ; free physical = 166 ; free virtual = 24836
+Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:40 . Memory (MB): peak = 1779.340 ; gain = 612.000 ; free physical = 187 ; free virtual = 21643
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -325,7 +325,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:51 . Memory (MB): peak = 1779.516 ; gain = 611.996 ; free physical = 165 ; free virtual = 24834
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:41 . Memory (MB): peak = 1779.340 ; gain = 612.000 ; free physical = 186 ; free virtual = 21642
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -338,7 +338,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:51 . Memory (MB): peak = 1779.516 ; gain = 611.996 ; free physical = 165 ; free virtual = 24834
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:41 . Memory (MB): peak = 1779.340 ; gain = 612.000 ; free physical = 186 ; free virtual = 21642
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -350,25 +350,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:51 . Memory (MB): peak = 1779.516 ; gain = 611.996 ; free physical = 165 ; free virtual = 24834
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:41 . Memory (MB): peak = 1779.340 ; gain = 612.000 ; free physical = 186 ; free virtual = 21642
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:51 . Memory (MB): peak = 1779.516 ; gain = 611.996 ; free physical = 165 ; free virtual = 24834
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:41 . Memory (MB): peak = 1779.340 ; gain = 612.000 ; free physical = 186 ; free virtual = 21642
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:51 . Memory (MB): peak = 1779.516 ; gain = 611.996 ; free physical = 164 ; free virtual = 24834
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:41 . Memory (MB): peak = 1779.340 ; gain = 612.000 ; free physical = 186 ; free virtual = 21642
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:51 . Memory (MB): peak = 1779.516 ; gain = 611.996 ; free physical = 164 ; free virtual = 24834
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:41 . Memory (MB): peak = 1779.340 ; gain = 612.000 ; free physical = 186 ; free virtual = 21642
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -386,7 +386,7 @@ Report Cell Usage:
 +------+------+------+
 |1     |BIBUF |   130|
 |2     |BUFG  |     1|
-|3     |LUT1  |    54|
+|3     |LUT1  |    56|
 |4     |PS7   |     1|
 +------+------+------+
 
@@ -394,15 +394,15 @@ Report Instance Areas:
 +------+---------+-------------------------------------------+------+
 |      |Instance |Module                                     |Cells |
 +------+---------+-------------------------------------------+------+
-|1     |top      |                                           |   186|
-|2     |  inst   |processing_system7_v5_5_processing_system7 |   186|
+|1     |top      |                                           |   188|
+|2     |  inst   |processing_system7_v5_5_processing_system7 |   188|
 +------+---------+-------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:51 . Memory (MB): peak = 1779.516 ; gain = 611.996 ; free physical = 164 ; free virtual = 24834
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:41 . Memory (MB): peak = 1779.340 ; gain = 612.000 ; free physical = 186 ; free virtual = 21642
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 79 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:27 . Memory (MB): peak = 1779.516 ; gain = 330.535 ; free physical = 218 ; free virtual = 24891
-Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:51 . Memory (MB): peak = 1779.523 ; gain = 611.996 ; free physical = 214 ; free virtual = 24892
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1779.340 ; gain = 330.539 ; free physical = 243 ; free virtual = 21698
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:41 . Memory (MB): peak = 1779.348 ; gain = 612.000 ; free physical = 244 ; free virtual = 21699
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -412,10 +412,10 @@ No Unisim elements were transformed.
 INFO: [Common 17-83] Releasing license: Synthesis
 23 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:52 . Memory (MB): peak = 1781.516 ; gain = 638.824 ; free physical = 368 ; free virtual = 25016
-INFO: [Common 17-1381] The checkpoint '/home/jcoffman/work/Cora-Z7-10-base-linux/proj/cora_z7_10.runs/cora_z7_10_processing_system7_0_0_synth_1/cora_z7_10_processing_system7_0_0.dcp' has been generated.
-INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP /home/jcoffman/work/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/cora_z7_10_processing_system7_0_0.xci
-INFO: [Common 17-1381] The checkpoint '/home/jcoffman/work/Cora-Z7-10-base-linux/proj/cora_z7_10.runs/cora_z7_10_processing_system7_0_0_synth_1/cora_z7_10_processing_system7_0_0.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:42 . Memory (MB): peak = 1781.340 ; gain = 638.824 ; free physical = 375 ; free virtual = 21831
+INFO: [Common 17-1381] The checkpoint '/home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/proj/cora_z7_10.runs/cora_z7_10_processing_system7_0_0_synth_1/cora_z7_10_processing_system7_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP /home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/src/bd/cora_z7_10/ip/cora_z7_10_processing_system7_0_0/cora_z7_10_processing_system7_0_0.xci
+INFO: [Common 17-1381] The checkpoint '/home/jcoffman/work/cora_z7_10/Cora-Z7-10-base-linux/proj/cora_z7_10.runs/cora_z7_10_processing_system7_0_0_synth_1/cora_z7_10_processing_system7_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file cora_z7_10_processing_system7_0_0_utilization_synth.rpt -pb cora_z7_10_processing_system7_0_0_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.07 . Memory (MB): peak = 1781.516 ; gain = 0.000 ; free physical = 297 ; free virtual = 25014
-INFO: [Common 17-206] Exiting Vivado at Fri Dec 13 15:34:28 2019...
+report_utilization: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.05 . Memory (MB): peak = 1781.340 ; gain = 0.000 ; free physical = 392 ; free virtual = 21850
+INFO: [Common 17-206] Exiting Vivado at Tue Feb  4 15:27:50 2020...
